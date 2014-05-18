@@ -1,0 +1,19 @@
+﻿<Window x:Class="StopForgetting.Experiments.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:StopForgetting.Controls;assembly=StopForgetting"
+    Title="Window1" Height="326" Width="677" x:Name="window">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Delete" CanExecute="DeleteCommandCanExecute" Executed="DeleteCommandHandler"></CommandBinding>
+    </Window.CommandBindings>
+    <StackPanel>
+        <ListBox x:Name="TaskList" ItemsSource="{Binding ElementName=window, Path=Tasks}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <controls:TaskControl TaskId="{Binding Path=TaskId}" Where="{Binding Path=Where}" When="{Binding Path=When}" What="{Binding Path=What}"></controls:TaskControl>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+    </StackPanel>
+</Window>

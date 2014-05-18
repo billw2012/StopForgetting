@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="StopForgetting.Controls.TimeGroupedTaskView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:StopForgetting.Controls"
+             xmlns:selectors="clr-namespace:StopForgetting.TemplateSelectors"
+             x:Name="ucGroupedView"
+    >
+    <UserControl.Resources>
+        <selectors:TaskTemplateSelector x:Key="TaskTemplateSelector"></selectors:TaskTemplateSelector>
+
+        <Style x:Key="ListBoxStyle">
+            <Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Yellow"></SolidColorBrush>
+            </Style.Resources>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel Margin="5,10,0,0">
+
+        <TextBlock x:Name="tbHeading" FontSize="18" FontWeight="Bold" Foreground="DeepSkyBlue" Text="{Binding ElementName=ucGroupedView, Path=Heading}"></TextBlock>
+        <Line Style="{DynamicResource Line}"></Line>
+
+        
+        <StackPanel Margin="10,5,0,0">
+            <ListBox x:Name="taskList" BorderThickness="0"
+                     Style="{StaticResource ListBoxStyle}"
+                     ItemTemplateSelector="{StaticResource TaskTemplateSelector}">
+
+            </ListBox>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

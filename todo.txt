@@ -1,0 +1,15 @@
+
+
+Add tasks for the correct bucket
+Glow effect when a new task is added to the list
+Autocomplete for task fields
+---Delete Tasks from the UI
+---X- implement this as a command
+---Persist tasks to isolated storage
+Enable filtering
+When checking a task, mark it as completed - show it as strikethrough
+Create a bucket for overdue
+Fix the layouts - so when you resize it it is not too small
+Remember Window Position on clise
+Create only a single instance - pp 200
+
